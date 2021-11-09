@@ -7,7 +7,7 @@ const DashboardScreen: React.FC = () => {
   return (
     <Box flexDirection="column" flex={1}>
       <Box borderRadius={20} p="xl" m="s">
-        <Text variant="b1">Thiss should besss a dashboard</Text>
+        <Text variant="b1">Thisss should besss a dashboard</Text>
         <Button variant="primary" text="Copy Workout" onPress={() => Alert.alert('ok')} />
       </Box>
     </Box>
