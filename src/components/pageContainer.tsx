@@ -5,9 +5,11 @@ import { Box } from '.';
 
 const PageContainer: React.FC = ({ children }) => {
   return (
-    <Box paddingHorizontal="xl" paddingVertical="xl" flex={1}>
-      <SafeAreaView style={styles.flex}>{children}</SafeAreaView>
-    </Box>
+    <SafeAreaView style={styles.flex}>
+      <Box flex={1} paddingHorizontal="xl" paddingVertical="xl">
+        {children}
+      </Box>
+    </SafeAreaView>
   );
 };
 

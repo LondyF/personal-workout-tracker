@@ -23,7 +23,7 @@ const TabBar: React.FC<TabBarProps> = ({
   onIndexChange,
 }) => {
   return (
-    <Box {...tabBarStyle} flexDirection="row" justifyContent="space-between">
+    <Box paddingVertical="xl" {...tabBarStyle} flexDirection="row" justifyContent="space-between">
       {navigationState.routes.map((route, i) => {
         let isSelected = selectedIndex === i;
 
