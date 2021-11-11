@@ -15,7 +15,9 @@
           "@stores": "./src/stores",
           "@services": "./src/services",
           "@hooks": "./src/hooks",
-          "@features": "./src/features"
+          "@features": "./src/features",
+          "@types": "./src/types",
+          "@enums": "./src/enums"
         }
       }
     ]

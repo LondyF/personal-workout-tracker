@@ -1,4 +1,4 @@
 declare interface MuscleGroup {
-  id: number;
+  id: import('@enums/muscleGroups').MuscleGroups;
   name: string;
 }

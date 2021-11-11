@@ -4,6 +4,7 @@ import { useWindowDimensions } from 'react-native';
 import { SceneMap, TabView } from 'react-native-tab-view';
 
 import { PageContainer, TabBar } from '@src/components';
+import { MuscleGroups } from '@enums/muscleGroups';
 
 import Header from '../components/header';
 
@@ -30,7 +31,7 @@ const WorkoutDetailScreen = () => {
 
   return (
     <PageContainer>
-      <Header muscleGroups={[]} />
+      <Header muscleGroups={[MuscleGroups.Chest, MuscleGroups.Back, MuscleGroups.Shoulders]} />
       <TabView
         navigationState={{ index, routes }}
         renderScene={renderScene}

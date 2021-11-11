@@ -1,5 +1,7 @@
+import { BoxProps } from '@shopify/restyle';
+import { Theme } from '@src/styles/theme';
 import React, { Dispatch, SetStateAction } from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 
 import { NavigationState, SceneRendererProps, Route } from 'react-native-tab-view';
 
@@ -10,17 +12,23 @@ type State = NavigationState<Route>;
 interface TabBarProps extends SceneRendererProps {
   navigationState: State;
   selectedIndex: number;
+  tabBarStyle?: BoxProps<Theme>;
   onIndexChange: Dispatch<SetStateAction<number>>;
 }
 
-const TabBar: React.FC<TabBarProps> = ({ navigationState, selectedIndex, onIndexChange }) => {
+const TabBar: React.FC<TabBarProps> = ({
+  navigationState,
+  selectedIndex,
+  tabBarStyle,
+  onIndexChange,
+}) => {
   return (
-    <View style={styles.tabBar}>
+    <Box {...tabBarStyle} flexDirection="row" justifyContent="space-between">
       {navigationState.routes.map((route, i) => {
         let isSelected = selectedIndex === i;
 
         return (
-          <TouchableOpacity onPress={() => onIndexChange(i)}>
+          <TouchableOpacity key={i} onPress={() => onIndexChange(i)}>
             <Box
               backgroundColor={isSelected ? 'primaryPurpleOpacity' : 'white'}
               borderRadius={5}
@@ -36,21 +44,8 @@ const TabBar: React.FC<TabBarProps> = ({ navigationState, selectedIndex, onIndex
           </TouchableOpacity>
         );
       })}
-    </View>
+    </Box>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  tabBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  tabItem: {
-    flex: 1,
-  },
-});
 
 export default TabBar;
