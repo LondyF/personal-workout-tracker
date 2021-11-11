@@ -5,7 +5,7 @@ import { Box } from '.';
 
 const PageContainer: React.FC = ({ children }) => {
   return (
-    <Box paddingHorizontal="m" paddingVertical="xl" flex={1}>
+    <Box paddingHorizontal="xl" paddingVertical="xl" flex={1}>
       <SafeAreaView style={styles.flex}>{children}</SafeAreaView>
     </Box>
   );
