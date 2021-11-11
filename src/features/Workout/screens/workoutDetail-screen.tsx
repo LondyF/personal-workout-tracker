@@ -87,7 +87,7 @@ const routes = [
 
 const renderScene = SceneMap({
   overview: () => <WorkoutOverviewScreen workout={WORKOUT} />,
-  exercises: () => <WorkoutExercisesScreen />,
+  exercises: () => <WorkoutExercisesScreen workout={WORKOUT} />,
   details: () => <WorkoutDetailsScreen />,
 });
 
