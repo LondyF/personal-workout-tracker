@@ -16,8 +16,13 @@ const WorkoutOverviewScreen: React.FC<WorkoutOverviewScreenProps> = React.memo((
         </Text>
       </Box>
       <Box flex={1}>
-        {workout.exercisesPerMuscle.map((x) => (
-          <Box flexDirection="row" justifyContent="space-between" alignItems="center" mb="s">
+        {workout.exercisesPerMuscle.map((x, i) => (
+          <Box
+            key={i}
+            flexDirection="row"
+            justifyContent="space-between"
+            alignItems="center"
+            mb="s">
             <Box flexDirection="row" alignItems="center">
               <Box
                 width={10}
